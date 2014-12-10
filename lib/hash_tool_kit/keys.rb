@@ -2,11 +2,11 @@ module HashToolKit
   class Keys
 
     def self.camelize(h)
-      format_recursively(:to_camelcase, h)
+      format_recursively(:camelize, h)
     end
 
     def self.underscorize(h)
-      format_recursively(:to_underscore, h)
+      format_recursively(:underscore, h)
     end
 
     private
@@ -15,7 +15,7 @@ module HashToolKit
       formatted_hash = {}
 
       h.each do |k, v|
-        new_key = StringUtils.send(action, k.to_s)
+        new_key = k.to_s.send(action)
         new_key[0] = new_key[0].downcase
         
         case v.class.to_s

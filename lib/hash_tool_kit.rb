@@ -1,5 +1,5 @@
 require "hash_tool_kit/version"
-require "hash_tool_kit/string_utils"
+require "active_support/core_ext/string"
 require "hash_tool_kit/keys"
 
 module HashToolKit
